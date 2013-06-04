@@ -80,7 +80,7 @@ SC02B::Enter
 ; E/J -> Escape
 SC029::send,{Blind}{Escape}
 
-; Right Alt (remapped to RWin) + ; -> RWin + l
+; Right Alt (remapped to RWin with windows key remapper) + ; -> RWin + l
 #SC027::#l
 
 ; ----------------------------------
