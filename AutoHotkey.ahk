@@ -33,12 +33,20 @@ SC145 & SC026::send,{Blind}{PgUp}
 SC145 & SC034::send,{Blind}{PgDn}
 
 ; WASD arrow keys
-SC07B & SC011::send,{Blind}{Up}
-SC07B & SC01E::send,{Blind}{Left}
-SC07B & SC020::send,{Blind}{Right}
-SC07B & SC01F::send,{Blind}{Down}
+; SC07B & SC011::send,{Blind}{Up}
+; SC07B & SC01E::send,{Blind}{Left}
+; SC07B & SC020::send,{Blind}{Right}
+; SC07B & SC01F::send,{Blind}{Down}
 
-SC07B & SC017::send,{PrintScreen}
+; Fn + s -> Backspace, Fn + d -> Backspace
+SC07B & SC01F::send,{BS}
+SC07B & SC020::send,{BS}
+
+; Fn + p -> PrintScreen
+SC07B & SC019::send,{PrintScreen}
+
+; Fn + i -> Shift + Insert ; TODO make it rather Fn + Shift + i
+SC07B & SC017::send,{ShiftDown}{Insert}{ShiftUp}
 
 SC07B::send,{Enter} ; Sends Enter if Fn was used and not combined with anything else
 
@@ -72,7 +80,7 @@ SC079::send,{BS} ; "send" is needed in the case of SC079
 SC07B & SC00E::send,{Delete}
 
 ; Fn + Shift + \ -> Insert
-SC02A & SC07B & SC02B::send,{Insert}
+; SC02A & SC07B & SC02B::send,{Insert} ; doesn't work
 
 ; extend Enter key bottom to the left (like on the HHKB)
 SC02B::Enter
@@ -80,7 +88,7 @@ SC02B::Enter
 ; E/J -> Escape
 SC029::send,{Blind}{Escape}
 
-; Right Alt (remapped to RWin with windows key remapper) + ; -> RWin + l
+; Right Alt (remapped to RWin) + ; -> RWin + l
 #SC027::#l
 
 ; ----------------------------------
@@ -118,3 +126,8 @@ SC045::Return ; Pause
 SC138::Return ; Right Alt
 
 SC01C::Return ; Enter
+
+SC07B & SC018::Return ; Disable Fn + o
+; SC07B & SC019::Return ; Disable Fn + p
+SC07B & SC01B::Return ; disable Fn + ]
+SC07B & SC02B::Return ; disable Fn + SC02B (the key used to simulate HHKB Prod 2 long Enter key)
